@@ -1,163 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
 </head>
 
 <style>
-    body {
-        font-family: Helvetica;
-        font-size: 3vw;
-        background: yellow;
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;   
-    }
-    .item {
-        position: relative;
-        display: block;
-        max-width: 70vw;
-        margin-bottom: 20vw;
-    }
+	body {
+		font-family: Helvetica;
+		font-size: 3vw;
+		background: yellow;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.item {
+		position: relative;
+		display: block;
+		max-width: 70vw;
+		margin-bottom: 20vw;
+	}
 
 
-    video {
-        width: 100%;
-        height: auto;
-        
-    }
-    .video_container {
-        position: relative;
-    }
-    .video_portrait {
-        width: 30%;
-        position: absolute;
-        top: 30%;
-        left: -10%;
-    }
+	video {
+		width: 100%;
+		height: auto;
 
-    /* h2 {
+	}
+
+	.video_container {
+		position: relative;
+	}
+
+	.video_portrait {
+		width: 30%;
+		position: absolute;
+		top: 30%;
+		left: -10%;
+	}
+
+	/* h2 {
         font-size: 2em;
     } */
-    .text {
-        position: absolute;
-        bottom: -20%;
-        right: -10%;
-        max-width: 50%;
+	.text {
+		position: absolute;
+		bottom: -20%;
+		right: -10%;
+		max-width: 50%;
 
-        color: white;
-        text-shadow: 1px 1px #ff0000;
-    }
+		color: white;
+		text-shadow: 1px 1px #ff0000;
+	}
 </style>
 
 
 
 
 <script>
-window.onload = function() {
-    if(!!window.IntersectionObserver){
-        let videos = document.querySelectorAll('video');
+	window.onload = function () {
+		if (!!window.IntersectionObserver) {
+			let videos = document.querySelectorAll('video');
 
-        let observer = new IntersectionObserver((entries, observer) => { 
-            entries.forEach(entry => {
-                
-                if(entry.intersectionRatio!=1){
-                    entry.target.pause();
-                    console.log(entry.target.currentSrc + " pause")
-                }
-                else {
-                    entry.target.play();
-                    console.log(entry.target.currentSrc + " play")
-                }
-            });
-        }, {threshold: 1});
+			let observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
 
-        videos.forEach(function(video){          
-            observer.observe(video);
-        });
-        
-    }
-}
+					if (entry.intersectionRatio != 1) {
+						entry.target.pause();
+						console.log(entry.target.currentSrc + " pause")
+					}
+					else {
+						entry.target.play();
+						console.log(entry.target.currentSrc + " play")
+					}
+				});
+			}, { threshold: 1 });
+
+			videos.forEach(function (video) {
+				observer.observe(video);
+			});
+
+		}
+	}
 </script>
 
 
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
 
 
-    <div class="container">
-        
-        <div class="item">
-            <h2>e+p films</h2>
-            <div class="video_container">           
-                <video 
-                    class="video video_landscape"
-                    muted loop playsinline
-                    preload="none" 
-                    width="1280" height="800"
-                    poster="EP Films Laptop Standbild.jpg">
-                    <source src="EP Films Laptop.m4v" type="video/x-m4v">
-                    <!-- <source src="EP Films Laptop.m4v" type="video/mp4"> -->
-                        
-                </video>
-                <video 
-                    class="video video_portrait"
-                    muted loop playsinline
-                    preload="none" 
-                    width="375" height="812"
-                    poster="EP Films IPhone Nr2 V1 Screenshot2.jpg">
-                    <source src="EP Films IPhone Nr2 V1.m4v" type="video/x-m4v">
-                </video>
-            </div>
-            <div class="text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis aperiam debitis nam minima iusto neque reprehenderit!</p>
-            </div>
-        </div>
 
-        <div class="item">
-            <h2>Keralock</h2>
-            <div class="video_container">           
-                <video 
-                    class="video video_landscape"
-                    muted loop playsinline
-                    preload="none" 
-                    width="1280" height="800"
-                    poster="EP Films Laptop Standbild.jpg">
-                    <source src="Keralock Laptop Nr1 V1.m4v" type="video/x-m4v">
-                    <!-- <source src="EP Films Laptop.m4v" type="video/mp4"> -->
-                        
-                </video>
-                <video 
-                    class="video video_portrait"
-                    muted loop playsinline
-                    preload="none" 
-                    width="375" height="812"
-                    poster="EP Films IPhone Nr2 V1 Screenshot2.jpg">
-                    <source src="Keralock Iphone Nr1 V1.m4v" type="video/x-m4v">
-                </video>
-            </div>
-            <div class="text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis aperiam debitis nam minima iusto neque reprehenderit!</p>
-            </div>
-        </div>
-        
-    </div>
+	<div class="container">
 
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem quibusdam?</p>
+		<div class="item">
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+		</div>
+
+		<div class="item">
+			<h2>e+p films</h2>
+			<div class="video_container">
+				<video class="video video_landscape" muted loop playsinline preload="none" width="1280" height="800"
+					poster="assets/EP Films Laptop Standbild.jpg">
+					<source src="assets/EP Films Laptop.m4v" type="video/x-m4v">
+					<!-- <source src="assets/EP Films Laptop.m4v" type="video/mp4"> -->
+
+				</video>
+				<video class="video video_portrait" muted loop playsinline preload="none" width="375" height="812"
+					poster="assets/EP Films IPhone Nr2 V1 Screenshot2.jpg">
+					<source src="assets/EP Films IPhone Nr2 V1.m4v" type="video/x-m4v">
+				</video>
+			</div>
+			<div class="text">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis aperiam debitis nam
+					minima iusto neque reprehenderit!</p>
+			</div>
+		</div>
+
+		<div class="item">
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+		</div>
+
+		<div class="item">
+			<h2>Keralock</h2>
+			<div class="video_container">
+				<video class="video video_landscape" muted loop playsinline preload="none" width="1280" height="800"
+					poster="assets/EP Films Laptop Standbild.jpg">
+					<source src="assets/Keralock Laptop Nr1 V1.m4v" type="video/x-m4v">
+					<!-- <source src="EP Films Laptop.m4v" type="video/mp4"> -->
+
+				</video>
+				<video class="video video_portrait" muted loop playsinline preload="none" width="375" height="812"
+					poster="assets/EP Films IPhone Nr2 V1 Screenshot2.jpg">
+					<source src="assets/Keralock Iphone Nr1 V1.m4v" type="video/x-m4v">
+				</video>
+			</div>
+			<div class="text">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis aperiam debitis nam
+					minima iusto neque reprehenderit!</p>
+			</div>
+		</div>
+
+		<div class="item">
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur nulla accusamus dolorem deserunt
+				recusandae quaerat, doloribus inventore ex? Qui maxime rerum libero? Ad, saepe eligendi atque non autem
+				quibusdam?</p>
+		</div>
+
+	</div>
 
 </body>
+
 </html>
