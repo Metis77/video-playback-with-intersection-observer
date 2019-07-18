@@ -23,10 +23,9 @@
 	}
 
 	.item {
-		position: relative;
 		display: block;
 		max-width: 70vw;
-		margin-bottom: 20vw;
+		
 	}
 
 
@@ -38,6 +37,7 @@
 
 	.video_container {
 		position: relative;
+		margin-bottom: 20vw;
 	}
 
 	.video_portrait {
@@ -60,6 +60,11 @@
 		text-shadow: 1px 1px #ff0000;
 	}
 </style>
+
+
+
+
+
 
 
 
@@ -92,6 +97,20 @@
 </script>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
 
 
@@ -119,21 +138,27 @@
 		<div class="item">
 			<h2>e+p films</h2>
 			<div class="video_container">
-				<video class="video video_landscape" muted loop playsinline preload="none" width="1280" height="800"
+				<video class="video video_landscape" 
+					muted loop playsinline preload="auto" 
+					width="1280" height="800"
 					poster="assets/EP Films Laptop Standbild.jpg">
+					<source src="assets/EP Films Laptop.webm" type="video/webm">
 					<source src="assets/EP Films Laptop.m4v" type="video/x-m4v">
 					<!-- <source src="assets/EP Films Laptop.m4v" type="video/mp4"> -->
-
 				</video>
-				<video class="video video_portrait" muted loop playsinline preload="none" width="375" height="812"
+				<video class="video video_portrait" 
+					muted loop playsinline preload="auto" 
+					width="375" height="812"
 					poster="assets/EP Films IPhone Nr2 V1 Screenshot2.jpg">
+					<source src="assets/EP Films IPhone Nr2 V1.webm" type="video/webm">
 					<source src="assets/EP Films IPhone Nr2 V1.m4v" type="video/x-m4v">
 				</video>
+				<div class="text">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis aperiam debitis nam
+							minima iusto neque reprehenderit!</p>
+					</div>
 			</div>
-			<div class="text">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis aperiam debitis nam
-					minima iusto neque reprehenderit!</p>
-			</div>
+			
 		</div>
 
 		<div class="item">
@@ -151,21 +176,26 @@
 		<div class="item">
 			<h2>Keralock</h2>
 			<div class="video_container">
-				<video class="video video_landscape" muted loop playsinline preload="none" width="1280" height="800"
+				<video class="video video_landscape" 
+					muted loop playsinline preload 
+					width="1280" height="800"
 					poster="assets/EP Films Laptop Standbild.jpg">
 					<source src="assets/Keralock Laptop Nr1 V1.m4v" type="video/x-m4v">
 					<!-- <source src="EP Films Laptop.m4v" type="video/mp4"> -->
 
 				</video>
-				<video class="video video_portrait" muted loop playsinline preload="none" width="375" height="812"
+				<video class="video video_portrait" 
+					muted loop playsinline preload 
+					width="375" height="812"
 					poster="assets/EP Films IPhone Nr2 V1 Screenshot2.jpg">
 					<source src="assets/Keralock Iphone Nr1 V1.m4v" type="video/x-m4v">
 				</video>
+				<div class="text">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis aperiam debitis nam
+							minima iusto neque reprehenderit!</p>
+				</div>
 			</div>
-			<div class="text">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis aperiam debitis nam
-					minima iusto neque reprehenderit!</p>
-			</div>
+			
 		</div>
 
 		<div class="item">
